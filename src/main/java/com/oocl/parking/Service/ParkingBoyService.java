@@ -23,4 +23,8 @@ public class ParkingBoyService {
     public ParkingLot addParkingLotToParkingBoyById(int pbID, int plID) {
         return parkingLotService.addParkingLotToParkingBoyById(pbID, plID);
     }
+
+    public List<ParkingBoy> getAllParkingBoys() {
+        return parkingBoys;
+    }
 }

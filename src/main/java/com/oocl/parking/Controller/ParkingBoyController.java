@@ -7,12 +7,19 @@ import com.oocl.parking.Service.ParkingBoyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/parkingBoys")
 public class ParkingBoyController {
 
     @Autowired
     private ParkingBoyService parkingBoyService;
+
+    @GetMapping(path="")
+    public List<ParkingBoy> getAllParkingBoys(){
+        return parkingBoyService.getAllParkingBoys();
+    }
 
     @PostMapping(path="")
     @ResponseBody

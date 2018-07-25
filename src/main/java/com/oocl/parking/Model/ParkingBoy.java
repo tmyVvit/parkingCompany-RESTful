@@ -9,12 +9,37 @@ import java.util.List;
 public class ParkingBoy {
     private int pbID;
     private String name;
+    //private int numberOfParkingLots;
 
-    private List<ParkingLot> parkingLots= new ArrayList<>();
+   // private List<ParkingLot> parkingLots;
 
 //    public ParkingBoy(){
 //        parkingLots = new ArrayList<>();
 //    }
+
+//    public List<ParkingLot> getParkingLots() {
+//        return parkingLots;
+//    }
+//
+//    public void setParkingLots(List<ParkingLot> parkingLots) {
+//        this.parkingLots = parkingLots;
+//    }
+//public int getNumberOfParkingLots() {
+//    return numberOfParkingLots;
+//}
+//
+//    public void setNumberOfParkingLots(int numberOfParkingLots) {
+//        this.numberOfParkingLots = numberOfParkingLots;
+//    }
+//
+//    public void addParkingLot(){
+//        this.numberOfParkingLots++;
+//    }
+//
+//    public void subParkingLot(){
+//        this.numberOfParkingLots--;
+//    }
+
 
     public int getPbID() {
         return pbID;
@@ -23,15 +48,6 @@ public class ParkingBoy {
     public void setPbID(int pbID) {
         this.pbID = pbID;
     }
-
-    public List<ParkingLot> getParkingLots() {
-        return parkingLots;
-    }
-
-    public void setParkingLots(List<ParkingLot> parkingLots) {
-        this.parkingLots = parkingLots;
-    }
-
 
     public String getName() {
         return name;
