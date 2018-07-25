@@ -1,6 +1,7 @@
 package com.oocl.parking.Controller;
 
 
+import com.oocl.parking.Model.ParkingBoy;
 import com.oocl.parking.Model.ParkingLot;
 import com.oocl.parking.Service.ParkingLotService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +25,10 @@ public class ParkingLotController {
     @GetMapping("")
     public List<ParkingLot> getAllParkingLots(){
         return parkingLotService.getAllParkingLots();
+    }
+
+    @GetMapping("/{plID}")
+    public ParkingLot getParkingLotById(@PathVariable int plID){
+        return parkingLotService.getParkingLotById(plID);
     }
 }
