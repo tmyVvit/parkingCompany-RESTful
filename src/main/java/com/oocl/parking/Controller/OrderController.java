@@ -34,9 +34,11 @@ public class OrderController {
         return orderService.parkingBoyGetTheOrder(receiptID, parkingBoy.getPbID());
     }
 
-//    @DeleteMapping("/{receiptID}")
-//    @ResponseBody
-//    public Order pickUpTheCar
+    @DeleteMapping("/{receiptID}")
+    @ResponseBody
+    public Order pickUpTheCarUpdateTheOrder(@PathVariable String receiptID){
+        return orderService.pickUpTheCarUpdateTheOrder(receiptID);
+    }
 }
 
 

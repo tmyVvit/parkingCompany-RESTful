@@ -66,4 +66,16 @@ public class OrderService {
         }
         return null;
     }
+
+    public Order pickUpTheCarUpdateTheOrder(String receiptID) {
+        Order order = getOrderByID(receiptID);
+        if(order != null){
+            order.setStatus("havePickedUp");
+            int plID = order.getPlID();
+            ParkingLot parkingLot = parkingLotService.getParkingLotById(plID);
+            parkingLot.unPark();
+            return order;
+        }
+        return null;
+    }
 }
