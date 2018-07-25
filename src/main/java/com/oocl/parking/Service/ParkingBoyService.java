@@ -49,4 +49,26 @@ public class ParkingBoyService {
         }
         return null;
     }
+
+    public boolean deleteParkingBoyByID(int pbID) {
+        ParkingBoy parkingBoy = getParkingBoyById(pbID);
+        if(parkingBoy != null){
+            if(checkParkingBoyIsEmpty(pbID)){
+                parkingBoys.remove(parkingBoy);
+                parkingLotService.deleteParkingBoy(pbID);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean checkParkingBoyIsEmpty(int pbID){
+        List<ParkingLot> parkingLots = parkingLotService.getParkingLotByParkingBoyId(pbID);
+        for(ParkingLot parkingLot : parkingLots){
+            if(!parkingLot.isEmpty()){
+                return false;
+            }
+        }
+        return true;
+    }
 }

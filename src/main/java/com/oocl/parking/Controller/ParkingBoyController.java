@@ -38,4 +38,8 @@ public class ParkingBoyController {
         return parkingBoyService.addParkingLotToParkingBoyById(pbID, parkingLot.getPlID());
     }
 
+    @DeleteMapping("/{pbID}")
+    public boolean deleteParkingBoyByID(@PathVariable int pbID){
+        return parkingBoyService.deleteParkingBoyByID(pbID);
+    }
 }

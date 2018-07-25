@@ -67,10 +67,18 @@ public class ParkingLotService {
 
     public boolean deleteParkingLotById(int plID) {
         ParkingLot parkingLot = getParkingLotById(plID);
-        if(parkingLot.isEmpty()){
+        if(parkingLot != null && parkingLot.isEmpty()){
             parkingLots.remove(parkingLot);
             return true;
         }
         return false;
+    }
+
+    public void deleteParkingBoy(int pbID) {
+        parkingLots.stream().forEach(u->{
+            if(u.getPbID()==pbID){
+                u.setPbID(0);
+            }
+        });
     }
 }

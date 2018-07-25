@@ -1,0 +1,843 @@
+{
+	"info": {
+		"_postman_id": "3ee607d3-4080-4c91-9e07-ad330b541a1f",
+		"name": "parking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "934aaef5-37cc-44e5-aa1d-94062c68ef12",
+			"name": "addParkingBoy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "78584aa1-41cf-402a-8d18-49cf329f7e74",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"will get parking boy 2\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql({",
+							"\t\"pbID\":1,",
+							"\t\"name\":\"pb1\"",
+							"});",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pbID\":1,\n\t\"name\":\"pb1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/parkingBoys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingBoys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "d7538b4e-190c-4b99-a3e0-4427aabf990b",
+			"name": "addParkingBoy2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5be7b61f-0246-49ac-8e4c-06b0ace064d4",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"will get parking boy 2\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql({",
+							"\t\"pbID\":2,",
+							"\t\"name\":\"pb2\"",
+							"});",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pbID\":2,\n\t\"name\":\"pb2\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/parkingBoys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingBoys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9a57c2b1-e5d9-4de1-adf6-b5971104304d",
+			"name": "getAllParkingBoys",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e5cc1b37-a28e-4ea0-a669-68a84c3f125e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Will get 2 parkingBoys\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql([{",
+							"        \"pbID\": 1,",
+							"        \"name\": \"pb1\"",
+							"    },{",
+							"\t\"pbID\":2,",
+							"\t\"name\":\"pb2\"",
+							"}]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/parkingBoys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingBoys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "85771d81-946f-4ed9-be98-0d3b5a6a4d8d",
+			"name": "addParkingLot",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d333d2d2-cff0-4c97-ae4e-bf4dbde5385e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Will get 1 parking lot\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql({",
+							"        \"plID\": 1,",
+							"        \"size\": 1,",
+							"        \"pbID\": 0,",
+							"        \"parkedCars\":0,",
+							"        \"full\":false,",
+							"        \"empty\":true",
+							"    });",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"plID\":1,\n\t\"size\":1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/parkingLots",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingLots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "0e7f089b-4ec1-4634-bf27-7cf889d9e35f",
+			"name": "addParkingLot2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "73e1e8f4-2b43-499a-89f2-363146ac1a2e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql({",
+							"\t\t\"plID\":2,",
+							"\t\t\"size\":3,",
+							"\t\t\"pbID\":0,",
+							"\t\t\"parkedCars\":0,",
+							"        \"full\":false,",
+							"        \"empty\":true",
+							"});",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"plID\":2,\n\t\"size\":3\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/parkingLots",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingLots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "f62db62f-d15c-4a9c-8ad8-fd96f4fa8842",
+			"name": "getAllParkingLots",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7caa9791-bb27-4940-909e-6d7fbd06ca9d",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Will get 2 parkingLots\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql([{",
+							"        \"plID\": 1,",
+							"        \"size\": 1,",
+							"        \"pbID\": 0,",
+							"\t\t\"parkedCars\":0,",
+							"        \"full\":false,",
+							"        \"empty\":true",
+							"    },{",
+							"\t\t\"plID\":2,",
+							"\t\t\"size\":3,",
+							"\t\t\"pbID\":0,",
+							"\t\t\"parkedCars\":0,",
+							"        \"full\":false,",
+							"        \"empty\":true",
+							"}]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/parkingLots",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingLots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "4745297d-61c2-4d20-8931-54c8089172c4",
+			"name": "bindParkingBoyAndParkingLot",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "736f3085-2a47-4266-9dbe-763c48eedfb6",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"get binded parking lot 1\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql({",
+							"        \"plID\":1,",
+							"        \"size\":1,",
+							"        \"pbID\":1,",
+							"\t\t\"parkedCars\":0,",
+							"        \"full\":false,",
+							"        \"empty\":true",
+							"    });",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"plID\":1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/parkingBoys/1/parkingLots",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingBoys",
+						"1",
+						"parkingLots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "99516272-6ddf-4d27-9e5c-6d0fd41b3aa0",
+			"name": "bindParkingBoyAndParkingLot2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9ece02f9-fbae-47af-8a22-8e7d2e3db773",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"get binded parking lot 2\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql({",
+							"        \"plID\":2,",
+							"        \"size\":3,",
+							"        \"pbID\":2,",
+							"\t\t\"parkedCars\":0,",
+							"        \"full\":false,",
+							"        \"empty\":true",
+							"    });",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"plID\":2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/parkingBoys/2/parkingLots",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingBoys",
+						"2",
+						"parkingLots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "f04adcfd-a892-4f2c-921b-6a7376f445f5",
+			"name": "getParkingBoyById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "86df644a-3bc4-4008-a897-e4566a430b19",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql({",
+							"        \"pbID\":1,",
+							"        \"name\":\"pb1\"",
+							"    });",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/parkingBoys/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingBoys",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "f7a12712-58e4-4cdc-bf49-7a16232ce846",
+			"name": "getParkingLotById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "29b61856-23cd-474c-8825-e3c13fe1fb46",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql({",
+							"        \"plID\":1,",
+							"        \"size\":1,",
+							"        \"pbID\":1,",
+							"\t\t\"parkedCars\":0,",
+							"        \"full\":false,",
+							"        \"empty\":true",
+							"    });",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/parkingLots/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingLots",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "20d6604e-03f3-4647-8351-8e682fced77b",
+			"name": "postTrueWhenTryParkGivenInputReceiptId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dc79ed39-aedd-45a0-a3a7-566004176e94",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Will get true when try park\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql(true);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"receiptID\":\"efccee71-498b-44e0-a3a0-b18c258d78b6\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "e30853cd-ab61-41a3-83dc-2cd034abefb4",
+			"name": "postTrueWhenTryPark2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9e39269b-9e39-4a33-b47e-46745b4aed63",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Will get true when try park 2\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql(true);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"receiptID\":\"21a162ad-0349-451e-bbc7-c0449f57e925\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "766d584d-66f3-45df-abaa-e1df181614a0",
+			"name": "postFalseWhenTryParkWithSameReceiptID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a3ceadbc-cf01-4f60-b7bc-b15e71dc96d7",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Will get false when try park with the same receipt id\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql(false);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"receiptID\":\"21a162ad-0349-451e-bbc7-c0449f57e925\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "e1556113-ec70-4d21-9e6a-e76e2a5b5287",
+			"name": "getNotParkedOrders",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5efec97a-b982-4b5c-9053-67b3521b3cf5",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"get notParked status orders\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql([",
+							"    {",
+							"        \"orderID\": \"efccee71-498b-44e0-a3a0-b18c258d78b6\",",
+							"        \"status\": \"notParked\",",
+							"        \"plID\": 0",
+							"    },",
+							"    {",
+							"        \"orderID\": \"21a162ad-0349-451e-bbc7-c0449f57e925\",",
+							"        \"status\": \"notParked\",",
+							"        \"plID\": 0",
+							"    }",
+							"]);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/orders?status=notParked",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "notParked"
+						}
+					]
+				},
+				"description": "get the status=\"notParked\" orders"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "4d034806-ec9a-47cd-b16c-ad989f6b8092",
+			"name": "patchParkedOrderWhenParkingBoyParkSuccess",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7694f51f-9c71-4fe5-b82a-c23802127f47",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"get parked order when park success\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql({",
+							"    \"orderID\": \"efccee71-498b-44e0-a3a0-b18c258d78b6\",",
+							"    \"status\": \"haveParked\",",
+							"    \"plID\": 1",
+							"    });",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pbID\":1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/orders/efccee71-498b-44e0-a3a0-b18c258d78b6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"efccee71-498b-44e0-a3a0-b18c258d78b6"
+					]
+				},
+				"description": "return the order when parking boy get the order, instead return null"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "d38e4c58-4baf-42c0-bfe5-61c3c94d677d",
+			"name": "deleteOrderSuccess",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4d5f72a5-ec85-4870-891d-85b82f3961ad",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"get order when pick up car success\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).is.eql({",
+							"    \"orderID\": \"efccee71-498b-44e0-a3a0-b18c258d78b6\",",
+							"    \"status\": \"havePickedUp\",",
+							"    \"plID\": 1",
+							"});",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/orders/efccee71-498b-44e0-a3a0-b18c258d78b6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"efccee71-498b-44e0-a3a0-b18c258d78b6"
+					]
+				},
+				"description": "pick up the car, and set the Order status 'havePickedUp'"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "b28e780c-1a2d-4b06-b431-67f93024e961",
+			"name": "deleteParkingLotById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0d07f2bc-f55c-494a-8c91-f9d55eaf8df6",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"delete empty parking lot by id\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).is.eql(true);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/parkingLots/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingLots",
+						"1"
+					]
+				},
+				"description": "delete parking lot when it is empty"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "edcbe9e0-4e02-49e5-bdaa-6850e9105592",
+			"name": "deleteParkingBoyById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1475536f-4c65-479d-8142-84154061a60f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Will get true when delete the parking boy\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql(true);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/parkingBoys/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parkingBoys",
+						"2"
+					]
+				},
+				"description": "delete Parking Boy when his parking lots are all empty, and make his parking lots pbID = 0"
+			},
+			"response": []
+		}
+	]
+}
