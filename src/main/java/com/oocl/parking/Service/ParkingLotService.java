@@ -14,7 +14,7 @@ public class ParkingLotService {
     private boolean isIn(int plID){
         boolean isIn = false;
         for(ParkingLot parkingLot : parkingLots){
-            if(parkingLot.getplID()==plID){
+            if(parkingLot.getPlID()==plID){
                 isIn = true;
                 break;
             }
@@ -23,7 +23,7 @@ public class ParkingLotService {
     }
 
     public ParkingLot addParkingLot(ParkingLot parkingLot) {
-        if(isIn(parkingLot.getplID()))
+        if(isIn(parkingLot.getPlID()))
             return null;
         parkingLots.add(parkingLot);
         return parkingLot;
@@ -31,7 +31,7 @@ public class ParkingLotService {
 
     public ParkingLot addParkingLotToParkingBoyById(int pbID, int plID) {
         for(ParkingLot parkingLot: parkingLots){
-            if(parkingLot.getplID() == plID){
+            if(parkingLot.getPlID() == plID){
                 parkingLot.setPbID(pbID);
                 return parkingLot;
             }
@@ -45,10 +45,18 @@ public class ParkingLotService {
 
     public ParkingLot getParkingLotById(int plID) {
         for(ParkingLot parkingLot: parkingLots){
-            if(parkingLot.getplID() == plID){
+            if(parkingLot.getPlID() == plID){
                 return parkingLot;
             }
         }
         return null;
+    }
+
+    public boolean isFull() {
+        for(ParkingLot parkingLot: parkingLots){
+            if(!parkingLot.isFull())
+                return false;
+        }
+        return true;
     }
 }

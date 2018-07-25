@@ -6,7 +6,7 @@ import java.util.UUID;
 
 @Service("receiptService")
 public class ReceiptService {
-    public String getReceiptId() {
-        return UUID.randomUUID().toString();
+    public UUID getReceipt() {
+        return UUID.randomUUID();
     }
 }

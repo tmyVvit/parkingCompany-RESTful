@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/receipts")
 public class ReceiptController {
@@ -14,7 +16,7 @@ public class ReceiptController {
     private ReceiptService receiptService;
 
     @GetMapping("")
-    public String getReceiptId(){
-        return receiptService.getReceiptId();
+    public UUID getReceiptId(){
+        return receiptService.getReceipt();
     }
 }
