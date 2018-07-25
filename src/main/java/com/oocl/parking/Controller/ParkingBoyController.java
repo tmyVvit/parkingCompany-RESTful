@@ -15,7 +15,8 @@ public class ParkingBoyController {
 
     @PostMapping(path="")
     @ResponseBody
-    public ParkingBoy addParkingBoys(@RequestBody ParkingBoy parkingBoy){
+    public ParkingBoy addParkingBoy(@RequestBody ParkingBoy parkingBoy){
         return parkingBoyService.addParkingBoys(parkingBoy);
     }
+
 }
