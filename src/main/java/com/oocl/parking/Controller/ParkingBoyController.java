@@ -35,7 +35,7 @@ public class ParkingBoyController {
     @PostMapping(path="/{pbID}/parkingLots")
     @ResponseBody
     public ParkingLot addParkingLotToParkingBoyById(@PathVariable int pbID, @RequestBody ParkingLot parkingLot){
-        return parkingBoyService.addParkingLotToParkingBoyById(pbID, parkingLot.getPlID());
+        return parkingBoyService.addParkingLotToParkingBoyById(pbID, parkingLot.getplID());
     }
 
 }

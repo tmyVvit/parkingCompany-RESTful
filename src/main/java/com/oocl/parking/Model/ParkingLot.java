@@ -20,7 +20,7 @@ public class ParkingLot {
 //        this.cars = cars;
 //    }
 
-    public int getPlID() {
+    public int getplID() {
         return plID;
     }
 

@@ -20,7 +20,7 @@ public class ParkingLotService {
 
     public ParkingLot addParkingLotToParkingBoyById(int pbID, int plID) {
         for(ParkingLot parkingLot: parkingLots){
-            if(parkingLot.getPlID() == plID){
+            if(parkingLot.getplID() == plID){
                 parkingLot.setPbID(pbID);
                 return parkingLot;
             }
@@ -34,7 +34,7 @@ public class ParkingLotService {
 
     public ParkingLot getParkingLotById(int plID) {
         for(ParkingLot parkingLot: parkingLots){
-            if(parkingLot.getPlID() == plID){
+            if(parkingLot.getplID() == plID){
                 return parkingLot;
             }
         }
