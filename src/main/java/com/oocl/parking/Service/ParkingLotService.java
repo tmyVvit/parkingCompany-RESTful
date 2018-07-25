@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service("parkingLotService")
 public class ParkingLotService {
@@ -58,5 +59,9 @@ public class ParkingLotService {
                 return false;
         }
         return true;
+    }
+
+    public List<ParkingLot> getParkingLotByParkingBoyId(int pbID) {
+        return parkingLots.stream().filter(u->u.getPbID()==pbID).collect(Collectors.toList());
     }
 }

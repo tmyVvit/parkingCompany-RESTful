@@ -12,8 +12,8 @@ public class Receipt {
         receiptID = UUID.randomUUID();
     }
 
-    public UUID getReceiptID() {
-        return receiptID;
+    public String getReceiptID() {
+        return receiptID.toString();
     }
 
     public void setReceiptID(UUID receiptID) {

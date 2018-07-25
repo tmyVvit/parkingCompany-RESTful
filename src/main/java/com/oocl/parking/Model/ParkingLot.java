@@ -45,4 +45,19 @@ public class ParkingLot {
     public boolean isFull() {
         return size<=parkedCars;
     }
+    private boolean isEmpty() {
+        return parkedCars==0;
+    }
+    public void park() {
+        if(!isFull())
+            parkedCars++;
+    }
+
+
+    public void unPark() {
+        if(!isEmpty())
+            parkedCars--;
+    }
+
+
 }

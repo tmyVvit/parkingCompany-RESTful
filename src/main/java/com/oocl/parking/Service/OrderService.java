@@ -1,6 +1,7 @@
 package com.oocl.parking.Service;
 
 import com.oocl.parking.Model.Order;
+import com.oocl.parking.Model.ParkingLot;
 import com.sun.org.apache.xpath.internal.operations.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,15 +34,36 @@ public class OrderService {
     }
 
     private boolean inOrders(String receiptID) {
-        for(Order order: orders){
-            if(order.getOrderID().equals(receiptID)){
-                return true;
-            }
-        }
-        return false;
+        if(getOrderByID(receiptID)==null)
+            return false;
+        return true;
     }
 
     public List<Order> getOrdersByStatus(String status) {
         return orders.stream().filter(u->u.getStatus().equals(status)).collect(Collectors.toList());
+    }
+
+    public Order parkingBoyPark(String receiptID, int pbID) {
+        List<ParkingLot> parkingLots = parkingLotService.getParkingLotByParkingBoyId(pbID);
+        Order order = getOrderByID(receiptID);
+        for(ParkingLot parkingLot : parkingLots){
+            if(!parkingLot.isFull()){
+                order.setPlID(parkingLot.getPlID());
+                order.setStatus("haveParked");
+                parkingLot.park();
+                return order;
+            }
+        }
+        return null;
+
+    }
+
+    private Order getOrderByID(String receiptID) {
+        for(Order order : orders){
+            if(order.getOrderID().equals(receiptID)){
+                return order;
+            }
+        }
+        return null;
     }
 }
