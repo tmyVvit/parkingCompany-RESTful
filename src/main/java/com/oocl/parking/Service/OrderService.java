@@ -69,7 +69,7 @@ public class OrderService {
 
     public Order pickUpTheCarUpdateTheOrder(String receiptID) {
         Order order = getOrderByID(receiptID);
-        if(order != null){
+        if(order != null && order.getStatus().equals("haveParked")){
             order.setStatus("havePickedUp");
             int plID = order.getPlID();
             ParkingLot parkingLot = parkingLotService.getParkingLotById(plID);

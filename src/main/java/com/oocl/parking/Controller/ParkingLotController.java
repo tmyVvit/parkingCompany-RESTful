@@ -31,4 +31,9 @@ public class ParkingLotController {
     public ParkingLot getParkingLotById(@PathVariable int plID){
         return parkingLotService.getParkingLotById(plID);
     }
+
+    @DeleteMapping("/{plID}")
+    public boolean deletParkingLotById(@PathVariable int plID){
+        return parkingLotService.deleteParkingLotById(plID);
+    }
 }

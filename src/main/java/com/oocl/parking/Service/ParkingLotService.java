@@ -64,4 +64,13 @@ public class ParkingLotService {
     public List<ParkingLot> getParkingLotByParkingBoyId(int pbID) {
         return parkingLots.stream().filter(u->u.getPbID()==pbID).collect(Collectors.toList());
     }
+
+    public boolean deleteParkingLotById(int plID) {
+        ParkingLot parkingLot = getParkingLotById(plID);
+        if(parkingLot.isEmpty()){
+            parkingLots.remove(parkingLot);
+            return true;
+        }
+        return false;
+    }
 }
