@@ -43,7 +43,7 @@ public class OrderService {
         return orders.stream().filter(u->u.getStatus().equals(status)).collect(Collectors.toList());
     }
 
-    public Order parkingBoyPark(String receiptID, int pbID) {
+    public Order parkingBoyGetTheOrder(String receiptID, int pbID) {
         List<ParkingLot> parkingLots = parkingLotService.getParkingLotByParkingBoyId(pbID);
         Order order = getOrderByID(receiptID);
         for(ParkingLot parkingLot : parkingLots){
