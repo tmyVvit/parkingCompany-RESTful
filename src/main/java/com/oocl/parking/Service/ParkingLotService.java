@@ -1,11 +1,9 @@
 package com.oocl.parking.Service;
 
-import com.oocl.parking.Model.ParkingBoy;
+
 import com.oocl.parking.Model.ParkingLot;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
-import javax.websocket.server.ServerEndpoint;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +11,20 @@ import java.util.List;
 public class ParkingLotService {
     private List<ParkingLot> parkingLots =new ArrayList<>();
 
+    private boolean isIn(int plID){
+        boolean isIn = false;
+        for(ParkingLot parkingLot : parkingLots){
+            if(parkingLot.getplID()==plID){
+                isIn = true;
+                break;
+            }
+        }
+        return isIn;
+    }
+
     public ParkingLot addParkingLot(ParkingLot parkingLot) {
+        if(isIn(parkingLot.getplID()))
+            return null;
         parkingLots.add(parkingLot);
         return parkingLot;
     }

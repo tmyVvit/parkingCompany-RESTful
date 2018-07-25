@@ -15,7 +15,20 @@ public class ParkingBoyService {
     @Autowired
     private ParkingLotService parkingLotService;
 
+    private boolean isIn(int pbID){
+        boolean isIn = false;
+        for(ParkingBoy parkingBoy : parkingBoys){
+            if(parkingBoy.getPbID()==pbID){
+                isIn = true;
+                break;
+            }
+        }
+        return isIn;
+    }
+
     public ParkingBoy addParkingBoys(ParkingBoy parkingBoy) {
+        if(isIn(parkingBoy.getPbID()))
+            return null;
         parkingBoys.add(parkingBoy);
         return parkingBoy;
     }
