@@ -27,4 +27,13 @@ public class ParkingBoyService {
     public List<ParkingBoy> getAllParkingBoys() {
         return parkingBoys;
     }
+
+    public ParkingBoy getParkingBoyById(int pbID) {
+        for(ParkingBoy parkingBoy: parkingBoys){
+            if(parkingBoy.getPbID() == pbID){
+                return parkingBoy;
+            }
+        }
+        return null;
+    }
 }

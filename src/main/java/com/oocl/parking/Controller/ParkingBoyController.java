@@ -21,6 +21,11 @@ public class ParkingBoyController {
         return parkingBoyService.getAllParkingBoys();
     }
 
+    @GetMapping(path = "/{pbID}")
+    public ParkingBoy getParkingBoyById(@PathVariable int pbID){
+        return parkingBoyService.getParkingBoyById(pbID);
+    }
+
     @PostMapping(path="")
     @ResponseBody
     public ParkingBoy addParkingBoy(@RequestBody ParkingBoy parkingBoy){
