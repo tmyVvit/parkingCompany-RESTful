@@ -26,4 +26,8 @@ public class ParkingLotService {
         }
         return null;
     }
+
+    public List<ParkingLot> getAllParkingLots() {
+        return parkingLots;
+    }
 }
