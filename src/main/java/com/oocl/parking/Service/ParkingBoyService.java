@@ -1,6 +1,8 @@
 package com.oocl.parking.Service;
 
 import com.oocl.parking.Model.ParkingBoy;
+import com.oocl.parking.Model.ParkingLot;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,11 +12,15 @@ import java.util.List;
 public class ParkingBoyService {
     private List<ParkingBoy> parkingBoys =new ArrayList<>();
 
+    @Autowired
+    private ParkingLotService parkingLotService;
+
     public ParkingBoy addParkingBoys(ParkingBoy parkingBoy) {
-//        ParkingBoy parkingBoy = new ParkingBoy();
-//        parkingBoy.setPbID(pbID);
-//        parkingBoy.setName(name);
         parkingBoys.add(parkingBoy);
         return parkingBoy;
+    }
+
+    public ParkingLot addParkingLotToParkingBoyById(int pbID, int plID) {
+        return parkingLotService.addParkingLotToParkingBoyById(pbID, plID);
     }
 }

@@ -2,12 +2,9 @@ package com.oocl.parking.Model;
 
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @Component
 public class ParkingLot {
-    private int pkID;
+    private int plID;
     private int size;
     private int pbID;
 //    private Map<Order, Car> cars;
@@ -23,12 +20,12 @@ public class ParkingLot {
 //        this.cars = cars;
 //    }
 
-    public int getPkID() {
-        return pkID;
+    public int getPlID() {
+        return plID;
     }
 
-    public void setPkID(int pkID) {
-        this.pkID = pkID;
+    public void setPlID(int plID) {
+        this.plID = plID;
     }
 
     public int getSize() {

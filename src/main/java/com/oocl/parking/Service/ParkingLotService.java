@@ -16,4 +16,14 @@ public class ParkingLotService {
         parkingLots.add(parkingLot);
         return parkingLot;
     }
+
+    public ParkingLot addParkingLotToParkingBoyById(int pbID, int plID) {
+        for(ParkingLot parkingLot: parkingLots){
+            if(parkingLot.getPlID() == plID){
+                parkingLot.setPbID(pbID);
+                return parkingLot;
+            }
+        }
+        return null;
+    }
 }
